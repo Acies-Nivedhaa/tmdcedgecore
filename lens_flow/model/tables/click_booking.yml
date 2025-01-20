@@ -1,0 +1,78 @@
+tables:
+  - name: click_booking
+    sql: {{ load_sql('click_booking') }}
+    description: Captures details of hotel bookings including location, user, campaign, impressions, interactions and booking amounts.
+    public: true 
+
+
+    joins:
+      - name: user_loc
+        relationship: many_to_one
+        sql: "{TABLE.location_id} = {user_loc.location_id}"
+
+    dimensions:
+      - name: ds
+        type: string
+        column: ds
+        description: "Date column"
+
+      - name: location_id
+        type: number
+        column: location_id
+        description: "Unique location ID"
+
+      - name: geo_id
+        type: number
+        column: geo_id
+        description: "Unique geographic ID"
+
+      - name: location_name
+        type: string
+        column: location_name
+        description: "Name of the State"
+
+      - name: geo_name
+        type: string
+        column: geo_name
+        description: "Name of the Country"
+
+      - name: booking_id
+        type: number
+        column: booking_id
+        description: "Unique identifier for booking"
+        primary_key: true
+
+      - name: advertiser_id
+        type: number
+        column: advertiser_id
+        description: "Unique identifier for advertiser"
+
+      - name: campaign_id
+        type: number
+        column: campaign_id
+        description: "Unique identifier for Campaign"
+
+      - name: user_id
+        type: number
+        column: user_id 
+        description: "Unique identifier for Users"
+
+      - name: impression_count
+        type: number
+        column: impression_count
+        description: "Number of impressions"
+
+      - name: interaction_count
+        type: number
+        column: interaction_count
+        description: "Number of interactions"
+
+    measures:
+      - name: total_bookings
+        description: "Total number of bookings"
+ 
+        sql: "COUNT( DISTINCT {booking_id})"
+        
+        type: number
+
+
