@@ -26,32 +26,3 @@ depot:
     database: analytics_insights_db                                 # Database name
     schema: public                                                  # Schema name
     table: bookingitem                                              # Table name
-
-# To run the file, .\dataos-ctl apply {depot-name}
-
-# name: ecpgdepot
-# version: v1
-# type: depot
-# layer: user
-# depot:
-#   type: JDBC                  
-#   description: {{To write data to postgresql database}}
-#   external: {{true}}
-#   connectionSecret:           
-#     - acl: r
-#       type: key-value-properties
-#       data:
-#         username: {{username}}
-#         password: {{password}}  
-#     - acl: rw
-#       type: key-value-properties
-#       data:
-#         username: {{username}}
-#         password: {{password}}
-#   spec:                        
-#     subprotocol: "postgresql"
-#     host: {{host}}
-#     port: {{port}}
-#     database: {{postgres}}
-#     params: #Required 
-#       sslmode: {{disable}}

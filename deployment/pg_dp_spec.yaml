@@ -14,7 +14,7 @@ v1beta:
     meta:
       title: Booking Data Product
       # sourceCodeUrl: https://github.com/Siva1316/Data_Os_Handson
-      sourceCodeUrl: https://github.com/Acies-Nivedhaa/tmdc-postgresql/tree/main/Tmdcedgecore
+      sourceCodeUrl: https://github.com/Acies-Nivedhaa/tmdcedgecore/tree/main
       # trackerUrl: https://rubikai.atlassian.net/browse/DPRB-65
  
     collaborators:
