@@ -1,0 +1,4 @@
+# product_affinity.yaml
+urlPath: /niv_booking
+description: This endpoint provides total bookings. 
+source: lens

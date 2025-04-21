@@ -1,0 +1,19 @@
+name: book_api # Replace the name with your API name
+description: A Data API on top of Lens using Talos. # API description
+version: 0.1.26 # API Version
+auth:
+  heimdallUrl: https://dataos-training.dataos.app/heimdall
+  userGroups: # User Groups
+    - name: default
+      api_scopes:
+        - meta
+        - data
+        - graphql
+        - jobs
+        - source
+      includes: "*"
+logLevel: 'DEBUG' # Log Level
+sources:
+  - name: lens # Source name
+    type: lens # Source Type
+    lensName: 'public:nivbooking360' # Lens Name format '<workspace>:<lens-name>'
